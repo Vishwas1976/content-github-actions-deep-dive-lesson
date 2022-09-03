@@ -32,6 +32,7 @@ jobs:
           path: ${{github.sha}}.zip
   upload:
     runs-on: ubuntu-latest
+    needs: build
     steps:
       - name: download zip file
         uses: actions/download-artifact@v2
@@ -43,6 +44,6 @@ jobs:
           role-to-assume: arn:aws:iam::582539599701:role/github-role
           aws-region: eu-west-2
       - name: upload to s3 
-        # aws s3 cp ${{github.sha}}.zip s3://repon/
+     
         run: |
-          aws s3 ls
+          aws s3 cp ${{github.sha}}.zip s3://repon/
