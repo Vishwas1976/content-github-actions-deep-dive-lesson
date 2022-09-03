@@ -43,5 +43,6 @@ jobs:
           role-to-assume: arn:aws:iam::582539599701:role/github-role
           aws-region: eu-west-2
       - name: upload to s3 
+        # aws s3 cp ${{github.sha}}.zip s3://repon/
         run: |
-          aws s3 cp ${{github.sha}}.zip s3://repon/
+          aws s3 ls
