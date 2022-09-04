@@ -62,7 +62,7 @@ jobs:
         input: ["hello","hi"]
     env:
       BUCKET_NAME:  'repon'
-      FUNCTION_ROLE: 'test-function-role-gm1tppo9'
+      FUNCTION_ROLE: 'test-function-role'
     steps:
       - name: setup aws creds
         uses: aws-actions/configure-aws-credentials@v1
