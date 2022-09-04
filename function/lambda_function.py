@@ -13,10 +13,10 @@ def lambda_handler(event, context):
     if event["input"] == "Hello":
 
         return "World"
-    if event["input"] == "hi":
+    if event["input"] == "Hi":
 
         return "hi there"
 
     else:
 
-        raise
+        return "nothing found here"

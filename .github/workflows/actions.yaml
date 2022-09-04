@@ -59,7 +59,7 @@ jobs:
     needs: upload
     strategy:
       matrix:
-        input: ["hello","hi"]
+        input: ["Hello","hi"]
     env:
       BUCKET_NAME:  'repon'
       FUNCTION_ROLE: 'arn:aws:iam::582539599701:role/test-function-role'
