@@ -1,5 +1,8 @@
 name: build the microservice workflow 
 on:
+  workflow_dispatch:
+    branches: 
+      - feature*
   push:
     branches:
       - main
