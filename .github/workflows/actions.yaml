@@ -61,12 +61,11 @@ jobs:
       matrix:
         input: ["hello","hi"]
     steps:
-      - name: Configure AWS credentials
+      - name: setup aws creds
         uses: aws-actions/configure-aws-credentials@v1
         with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: us-east-1
+          role-to-assume: arn:aws:iam::582539599701:role/github-role
+          aws-region: eu-west-2
       - name: Create test function
         run: |
             aws lambda create-function --function-name test-function-${{ matrix.input }} \
