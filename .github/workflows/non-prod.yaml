@@ -1,0 +1,12 @@
+name: deploy feature branches to non prod 
+on:
+  push:
+    branches:
+      - feature*
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      BUCKET_NAME: 'cfst-3457-ab78cd85a258d917116d9b8e4-nonprodbucket-1282t660xits9'
+  
