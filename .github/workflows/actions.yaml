@@ -63,5 +63,5 @@ jobs:
         run: |
           aws lambda update-function-code \
           --function-name test-function \
-          --s3-bucket repos \
+          --s3-bucket repon \
           --s3-key ${{ github.sha }}.zip
